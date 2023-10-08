@@ -1662,7 +1662,7 @@ $(document).ready(function () {
   wcGetLink.click(function () {
     0 == request && (gotolinkcountdown(), (request = !0)),
       $("html, body").animate(
-        { scrollTop: eval(gotolink.offset().top - 10) },
+        { scrollTop: eval(gotolink.offset().top - 100) },
         500
       );
   }),

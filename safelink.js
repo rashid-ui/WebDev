@@ -1,4 +1,4 @@
-//safelink blogger di bagikan gratis oleh https://pi-mathematica.blogspot.com v2.6.1
+//safelink for  blogger created by MD. Rashid Sahriar https://pi-mathematics.blogspot.com
 $(".idnblogProShow").click(function () {
   $(".safeWrap").fadeIn();
 }),
@@ -1628,24 +1628,27 @@ var aesCrypto = {};
       }
     });
 })(aesCrypto);
+var setGotolink = $(gotolink).text();
 $(document).ready(function () {
-    $.urlParam = function (t) {
-        var e = new RegExp("[?&]" + t + "=([^&#]*)").exec(window.location.href);
-        return null == e ? null : decodeURI(e[1]) || 0
-    };
-
-    var wcGetLink = $("#wcGetLink"),
-        gotolink = $("#gotolink"),
-        timer = $("#timer");
-
-    function gotolinkcountdown() {
-        var t = 3;
-        gotolink.removeClass("hidden");
-        var e = setInterval(function () {
-            var r = t -= 1;
-            gotolink.html(setText), r < 0 && (clearInterval(e), gotolink.prop("disabled", !1), gotolink.html(setGotolink))
-        }, 1e3)
-    }
+  $.urlParam = function (t) {
+    var e = new RegExp("[?&]" + t + "=([^&#]*)").exec(window.location.href);
+    return null == e ? null : decodeURI(e[1]) || 0;
+  };
+  var wcGetLink = $("#wcGetLink"),
+    gotolink = $("#gotolink"),
+    timer = $("#timer");
+  function gotolinkcountdown() {
+    var t = 3;
+    gotolink.removeClass("hidden");
+    var e = setInterval(function () {
+      var r = (t -= 1);
+      gotolink.html(setText),
+        r < 0 &&
+          (clearInterval(e),
+          gotolink.prop("disabled", !1),
+          gotolink.html(setGotolink));
+    }, 1e3);
+  }
   null != $.urlParam("o") &&
     timer.pietimer({
       timerSeconds: setTimer,
@@ -1662,7 +1665,7 @@ $(document).ready(function () {
   wcGetLink.click(function () {
     0 == request && (gotolinkcountdown(), (request = !0)),
       $("html, body").animate(
-        { scrollTop: eval(gotolink.offset().top - 100) },
+        { scrollTop: eval(gotolink.offset().top - 10) },
         500
       );
   }),

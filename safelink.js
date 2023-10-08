@@ -1,4 +1,4 @@
-//safelink blogger di bagikan gratis oleh https://idnblogpro.blogspot.com v2.6.1
+//safelink blogger di bagikan gratis oleh https://pi-mathematica.blogspot.com v2.6.1
 $(".idnblogProShow").click(function () {
   $(".safeWrap").fadeIn();
 }),
